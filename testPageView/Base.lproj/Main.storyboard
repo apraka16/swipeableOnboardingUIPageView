@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="testPageView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dB9-o2-csZ">
+                                <rect key="frame" x="8" y="25" width="360" height="632"/>
+                                <connections>
+                                    <segue destination="PHp-lE-fzV" kind="embed" id="51a-1l-rnw"/>
+                                </connections>
+                            </containerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="N84-TC-gKw">
+                                <rect key="frame" x="37" y="610" width="301" height="37"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhq-xz-EZu">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="37"/>
+                                        <state key="normal" title="Skip"/>
+                                    </button>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Z7D-6c-hN2">
+                                        <rect key="frame" x="130" y="0.0" width="39" height="37"/>
+                                        <color key="pageIndicatorTintColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </pageControl>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qi-Hg-3Ka">
+                                        <rect key="frame" x="269" y="0.0" width="32" height="37"/>
+                                        <state key="normal" title="Next"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="7qi-Hg-3Ka" secondAttribute="trailing" id="1Ld-Uf-Brf"/>
+                                    <constraint firstItem="fhq-xz-EZu" firstAttribute="leading" secondItem="N84-TC-gKw" secondAttribute="leading" id="ROL-ks-IeR"/>
+                                    <constraint firstItem="Z7D-6c-hN2" firstAttribute="leading" secondItem="fhq-xz-EZu" secondAttribute="trailing" constant="100" id="ab7-SX-9Nl"/>
+                                    <constraint firstItem="7qi-Hg-3Ka" firstAttribute="leading" secondItem="Z7D-6c-hN2" secondAttribute="trailing" constant="100" id="pyZ-mn-gtZ"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dB9-o2-csZ" secondAttribute="bottom" constant="10" id="2Un-c5-ocE"/>
+                            <constraint firstItem="dB9-o2-csZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="WhT-Ex-oy5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dB9-o2-csZ" secondAttribute="trailing" constant="7" id="cqC-TQ-7EH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="N84-TC-gKw" secondAttribute="bottom" constant="20" id="fyT-P0-Nvj"/>
+                            <constraint firstItem="N84-TC-gKw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="i0N-1k-kuq"/>
+                            <constraint firstItem="dB9-o2-csZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="pBH-mP-E6c"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="N84-TC-gKw" secondAttribute="trailing" constant="37" id="pRU-k8-3ah"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="Z7D-6c-hN2" id="pTR-nT-AT0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="117.39130434782609"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Oo5-Jz-fVi">
+            <objects>
+                <viewController storyboardIdentifier="1stPV" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Obg-JM-glb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8hh-Jc-DQc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bfB-4e-xXf" customClass="CardView" customModule="testPageView" customModuleProvider="target">
+                                <rect key="frame" x="7" y="20" width="360" height="639"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bfB-4e-xXf" firstAttribute="leading" secondItem="77g-pZ-N91" secondAttribute="leading" constant="7" id="1WV-38-XX5"/>
+                            <constraint firstItem="bfB-4e-xXf" firstAttribute="centerX" secondItem="8hh-Jc-DQc" secondAttribute="centerX" id="Q6a-4s-AI1"/>
+                            <constraint firstItem="bfB-4e-xXf" firstAttribute="top" secondItem="77g-pZ-N91" secondAttribute="top" id="V18-LE-9NO"/>
+                            <constraint firstItem="77g-pZ-N91" firstAttribute="bottom" secondItem="bfB-4e-xXf" secondAttribute="bottom" constant="8" id="omb-BO-tld"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="77g-pZ-N91"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Ls-PK-YZa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1020" y="492.50374812593708"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Yw4-Os-A5L">
+            <objects>
+                <viewController storyboardIdentifier="2ndPV" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pEz-W8-lTM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="St0-sU-4I7" customClass="CardView" customModule="testPageView" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBx-Vn-dYk" customClass="CardView" customModule="testPageView" customModuleProvider="target">
+                                <rect key="frame" x="7" y="20" width="360" height="639"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cBx-Vn-dYk" firstAttribute="centerX" secondItem="St0-sU-4I7" secondAttribute="centerX" id="B6m-X0-yrT"/>
+                            <constraint firstItem="cBx-Vn-dYk" firstAttribute="leading" secondItem="rfW-Of-Xrr" secondAttribute="leading" constant="7" id="FFk-pl-Cox"/>
+                            <constraint firstItem="cBx-Vn-dYk" firstAttribute="top" secondItem="rfW-Of-Xrr" secondAttribute="top" id="RH0-vP-81s"/>
+                            <constraint firstItem="rfW-Of-Xrr" firstAttribute="bottom" secondItem="cBx-Vn-dYk" secondAttribute="bottom" constant="8" id="fT1-IS-fd9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rfW-Of-Xrr"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dbm-wA-Dda" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1676" y="497.90104947526243"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Yz5-m1-lwf">
+            <objects>
+                <viewController storyboardIdentifier="3rdPV" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lYK-1M-02c" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qkQ-Ra-iTt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fzr-lM-FRN" customClass="CardView" customModule="testPageView" customModuleProvider="target">
+                                <rect key="frame" x="7" y="20" width="360" height="639"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fzr-lM-FRN" firstAttribute="top" secondItem="TvI-hQ-iM9" secondAttribute="top" id="Emj-IQ-Abv"/>
+                            <constraint firstItem="fzr-lM-FRN" firstAttribute="centerX" secondItem="qkQ-Ra-iTt" secondAttribute="centerX" id="LwQ-87-KO6"/>
+                            <constraint firstItem="fzr-lM-FRN" firstAttribute="leading" secondItem="TvI-hQ-iM9" secondAttribute="leading" constant="7" id="ODL-es-ZY3"/>
+                            <constraint firstItem="TvI-hQ-iM9" firstAttribute="bottom" secondItem="fzr-lM-FRN" secondAttribute="bottom" constant="8" id="rAL-g2-9Ge"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TvI-hQ-iM9"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fld-cQ-wRO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2323" y="498"/>
+        </scene>
+        <!--Onboarding View Controller-->
+        <scene sceneID="bs9-GK-rkU">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="12" navigationOrientation="horizontal" spineLocation="none" id="PHp-lE-fzV" customClass="OnboardingViewController" customModule="testPageView" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hea-b6-UQ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1020" y="-208"/>
+        </scene>
+    </scenes>
+</document>
