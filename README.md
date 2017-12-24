@@ -27,7 +27,7 @@ At the end of it, the result is the following which is exactly what I want. In c
 
 
   [1]: https://i.stack.imgur.com/pvism.png
-  [2]: https://i.stack.imgur.com/3mYiO.gif
+  [2]: https://i.stack.imgur.com/CyU6k.gif
 
 
 
