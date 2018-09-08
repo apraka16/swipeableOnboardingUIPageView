@@ -23,7 +23,10 @@ In order to control the new UIPageControl which I had dragged in, I introduced d
 
 At the end of it, the result is the following which is exactly what I want. In case anyone is interest, putting in a pub repo. 
 
+## Portrait
 [![enter image description here][2]][2]
+
+## Landscape
 [![enter image description here][3]][3]
 
 
