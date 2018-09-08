@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,45 +24,37 @@
                                     <segue destination="PHp-lE-fzV" kind="embed" id="51a-1l-rnw"/>
                                 </connections>
                             </containerView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="N84-TC-gKw">
-                                <rect key="frame" x="37" y="610" width="301" height="37"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhq-xz-EZu">
-                                        <rect key="frame" x="0.0" y="0.0" width="30" height="37"/>
-                                        <state key="normal" title="Skip"/>
-                                    </button>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Z7D-6c-hN2">
-                                        <rect key="frame" x="130" y="0.0" width="39" height="37"/>
-                                        <color key="pageIndicatorTintColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </pageControl>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qi-Hg-3Ka">
-                                        <rect key="frame" x="269" y="0.0" width="32" height="37"/>
-                                        <state key="normal" title="Next"/>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="7qi-Hg-3Ka" secondAttribute="trailing" id="1Ld-Uf-Brf"/>
-                                    <constraint firstItem="fhq-xz-EZu" firstAttribute="leading" secondItem="N84-TC-gKw" secondAttribute="leading" id="ROL-ks-IeR"/>
-                                    <constraint firstItem="Z7D-6c-hN2" firstAttribute="leading" secondItem="fhq-xz-EZu" secondAttribute="trailing" constant="100" id="ab7-SX-9Nl"/>
-                                    <constraint firstItem="7qi-Hg-3Ka" firstAttribute="leading" secondItem="Z7D-6c-hN2" secondAttribute="trailing" constant="100" id="pyZ-mn-gtZ"/>
-                                </constraints>
-                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhq-xz-EZu">
+                                <rect key="frame" x="313" y="36" width="30" height="30"/>
+                                <state key="normal" title="Skip"/>
+                                <connections>
+                                    <action selector="skipOnboarding:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XkS-kl-jxb"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Z7D-6c-hN2">
+                                <rect key="frame" x="168" y="610" width="39" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dB9-o2-csZ" secondAttribute="bottom" constant="10" id="2Un-c5-ocE"/>
+                            <constraint firstItem="fhq-xz-EZu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="67c-Fy-k7k"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fhq-xz-EZu" secondAttribute="trailing" constant="32" id="HB7-Wk-yNe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Z7D-6c-hN2" secondAttribute="bottom" constant="20" id="LYT-Jx-k93"/>
                             <constraint firstItem="dB9-o2-csZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="WhT-Ex-oy5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dB9-o2-csZ" secondAttribute="trailing" constant="7" id="cqC-TQ-7EH"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="N84-TC-gKw" secondAttribute="bottom" constant="20" id="fyT-P0-Nvj"/>
-                            <constraint firstItem="N84-TC-gKw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="i0N-1k-kuq"/>
+                            <constraint firstItem="Z7D-6c-hN2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jl7-nG-Ph4"/>
+                            <constraint firstItem="fhq-xz-EZu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="mo8-pl-tEQ"/>
                             <constraint firstItem="dB9-o2-csZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="pBH-mP-E6c"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="N84-TC-gKw" secondAttribute="trailing" constant="37" id="pRU-k8-3ah"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="onboardingContainer" destination="dB9-o2-csZ" id="Azy-ei-MKF"/>
                         <outlet property="pageControl" destination="Z7D-6c-hN2" id="pTR-nT-AT0"/>
+                        <outlet property="skipBtn" destination="fhq-xz-EZu" id="DUo-WO-CSU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
