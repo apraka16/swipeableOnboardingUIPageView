@@ -34,7 +34,6 @@ class ViewController: UIViewController, OnboardingViewControllerDelegate {
     func onboardingPageViewController(onboardingPageViewController: OnboardingViewController, didUpdatePageIndex index: Int) {
         pageControl.currentPage = index
     }
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
