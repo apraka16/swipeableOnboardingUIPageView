@@ -3,6 +3,14 @@
 The code is still rough but can be used with some tweaking.
 Code wherein the onboarding screen will be used only once during the lifetime of application, is not introduced in the applicationDidLaunch method (within AppDelegate). It is expected that people using it might introduce that, as it is hardly 4 lines of code. Please note that main purpose was to keep the main View appearing behind the PageViews (or onboarding screens, so that customers always have a glimpse of the good stuff lurking behind). 
  
+## Result
+
+## (Portrait)
+[![enter image description here][2]][2]
+
+## (Landscape)
+[![enter image description here][3]][3]
+ 
 Main ViewController is the entry point. Within the main VC, Container VC is used. UIPageViewController is dragged in underlying which three are VCs which would be the pages within the UIPageViewController. After removing the ContainerView's default controller, UIPageViewController is embedded (Enbed Segue) into the ContainerView (which in within the main VC).
 The whole arrangement looks like:
 
@@ -21,19 +29,13 @@ In order to control the new UIPageControl which I had dragged in, I introduced d
         func onboardingPageViewController(onboardingPageViewController: OnboardingViewController, didUpdatePageIndex index: Int)
     }
 
-At the end of it, the result is the following which is exactly what I want. In case anyone is interest, putting in a pub repo. 
-
-## Portrait
-[![enter image description here][2]][2]
-
-## Landscape
-[![enter image description here][3]][3]
-
-
+At the end of it, the result above is the following which is exactly what I want. In case anyone is interest, putting in a pub repo. Tx. 
 
   [1]: https://cdn-images-1.medium.com/max/800/1*roIpdolj3JhoM1jjnBQTjw.png
   [2]: https://cdn-images-1.medium.com/max/800/1*sL64K1hU62T-yimZBTNWLQ.gif
   [3]: https://cdn-images-1.medium.com/max/800/1*d8_cZqZssKjXX3ERht4UQQ.gif
+  
+  Icons made by Freepik from www.flaticon.com 
 
 
 
