@@ -26,8 +26,8 @@ At the end of it, the result is the following which is exactly what I want. In c
 [![enter image description here][2]][2]
 
 
-  [1]: https://i.stack.imgur.com/pvism.png
-  [2]: https://i.stack.imgur.com/CyU6k.gif
+  [1]: https://cdn-images-1.medium.com/max/800/1*roIpdolj3JhoM1jjnBQTjw.png
+  [2]: https://cdn-images-1.medium.com/max/800/1*sL64K1hU62T-yimZBTNWLQ.gif
 
 
 
