@@ -32,7 +32,7 @@ In order to control the new UIPageControl which I had dragged in, I introduced d
 At the end of it, the result above is the following which is exactly what I want. In case anyone is interest, putting in a pub repo. Tx. 
 
   [1]: https://cdn-images-1.medium.com/max/800/1*roIpdolj3JhoM1jjnBQTjw.png
-  [2]: https://cdn-images-1.medium.com/max/800/1*sL64K1hU62T-yimZBTNWLQ.gif
+  [2]: https://cdn-images-1.medium.com/max/800/1*YLByIhWCI5_NnjgeyU87tA.gif
   [3]: https://cdn-images-1.medium.com/max/800/1*d8_cZqZssKjXX3ERht4UQQ.gif
   
   Icons made by Freepik from www.flaticon.com 
