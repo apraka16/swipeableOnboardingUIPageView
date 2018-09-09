@@ -10,98 +10,61 @@ import UIKit
 
 class OnboardingViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
-    weak var onboardingDelegate: OnboardingViewControllerDelegate?
-    
-    private lazy var orderedViewController: [UIViewController] = {
-        return [instantiatePV1(),
-                instantiatePV2(),
-                instantiatePV3()]
+    enum PageViews: String {
+        case firstPV
+        case secondPV
+        case thirdPV
+        case fourthPV
+    }
+        
+    fileprivate lazy var orderedViewController: [UIViewController] = {
+        return [self.getViewController(withIdentifier: PageViews.firstPV.rawValue),
+                self.getViewController(withIdentifier: PageViews.secondPV.rawValue),
+                self.getViewController(withIdentifier: PageViews.thirdPV.rawValue),
+                self.getViewController(withIdentifier: PageViews.fourthPV.rawValue)]
     }()
     
+    fileprivate func getViewController(withIdentifier identifier: String) -> UIViewController
+    {
+        return (storyboard?.instantiateViewController(withIdentifier: identifier))!
+    }
+    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        if viewController.restorationIdentifier == "3rdPV" {
-            return instantiatePV2()
-        } else if viewController.restorationIdentifier == "2ndPV" {
-            onboardingDelegate?.onboardingPageViewController(onboardingPageViewController: self, didUpdatePageIndex: 1)
-            return instantiatePV1()
-        } else {
-            onboardingDelegate?.onboardingPageViewController(onboardingPageViewController: self, didUpdatePageIndex: 0)
-            return nil
-        }
+        guard let viewControllerIndex = orderedViewController.index(of: viewController) else { return nil }
+        let previousIndex = viewControllerIndex - 1
+        guard previousIndex >= 0 else { return orderedViewController.last }
+        guard orderedViewController.count > previousIndex else { return nil }
+        return orderedViewController[previousIndex]
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        if viewController.restorationIdentifier == "1stPV" {
-            return instantiatePV2()
-        } else if viewController.restorationIdentifier == "2ndPV" {
-            onboardingDelegate?.onboardingPageViewController(onboardingPageViewController: self, didUpdatePageIndex: 1)
-            return instantiatePV3()
-        } else {
-            onboardingDelegate?.onboardingPageViewController(onboardingPageViewController: self, didUpdatePageIndex: 2)
-            return nil
-        }
+        guard let viewControllerIndex = orderedViewController.index(of: viewController) else { return nil }
+        let nextIndex = viewControllerIndex + 1
+        guard nextIndex < orderedViewController.count else { return orderedViewController.first }
+        guard orderedViewController.count > nextIndex else { return nil }
+        return orderedViewController[nextIndex]
     }
     
-    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-//        print(viewControllers)
-//        if let firstViewController = viewControllers?.first, let index = orderedViewController.index(of: firstViewController) {
-//            onboardingDelegate?.onboardingPageViewController(onboardingPageViewController: self, didUpdatePageIndex: index)
-//        }
-        
+    func presentationCount(for: UIPageViewController) -> Int {
+        return orderedViewController.count
     }
     
-//    func presentationCount(for pageViewController: UIPageViewController) -> Int {
-//        return 3
-//    }
-    
-//    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-//        return 0
-//    }
-//
-    func instantiatePV1() -> UIViewController {
-//        onboardingDelegate?.onboardingPageViewController(onboardingPageViewController: self, didUpdatePageIndex: 0)
-        return (storyboard?.instantiateViewController(withIdentifier: "1stPV"))!
-    }
-    
-    func instantiatePV2() -> UIViewController {
-//        onboardingDelegate?.onboardingPageViewController(onboardingPageViewController: self, didUpdatePageIndex: 1)
-        return (storyboard?.instantiateViewController(withIdentifier: "2ndPV"))!
-    }
-    
-    func instantiatePV3() -> UIViewController {
-//        onboardingDelegate?.onboardingPageViewController(onboardingPageViewController: self, didUpdatePageIndex: 2)
-        return (storyboard?.instantiateViewController(withIdentifier: "3rdPV"))!
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        return 0
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataSource = self
-        delegate = self
-        onboardingDelegate?.onboardingPageViewController(onboardingPageViewController: self, didUpdatePageCount: orderedViewController.count)
-        if let firstViewController = orderedViewController.first {
-            setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
+        self.dataSource = self
+        self.delegate = self
+        
+        if let firstVC = orderedViewController.first {
+            setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
-
-protocol OnboardingViewControllerDelegate: class {
-    func onboardingPageViewController(onboardingPageViewController: OnboardingViewController, didUpdatePageCount count: Int)
-    func onboardingPageViewController(onboardingPageViewController: OnboardingViewController, didUpdatePageIndex index: Int)
 }

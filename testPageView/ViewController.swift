@@ -8,31 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController, OnboardingViewControllerDelegate {
+class ViewController: UIViewController {
 
-    @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var onboardingContainer: UIView!
     @IBOutlet weak var skipBtn: UIButton!
     
     
     @IBAction func skipOnboarding(_ sender: UIButton) {
-        pageControl.removeFromSuperview()
         sender.removeFromSuperview()
         onboardingContainer.removeFromSuperview()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let onboardingViewController = segue.destination as? OnboardingViewController {
-            onboardingViewController.onboardingDelegate = self
-        }
-    }
-    
-    func onboardingPageViewController(onboardingPageViewController: OnboardingViewController, didUpdatePageCount count: Int) {
-        pageControl.numberOfPages = count
-    }
-    
-    func onboardingPageViewController(onboardingPageViewController: OnboardingViewController, didUpdatePageIndex index: Int) {
-        pageControl.currentPage = index
     }
 
     override func viewDidLoad() {
