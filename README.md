@@ -5,12 +5,15 @@ Code wherein the onboarding screen will be used only once during the lifetime of
  
 ## Result
 
-## (Portrait)
+## (iPhone Portrait)
 [![enter image description here][2]][2]
 
-## (Landscape)
+## (iPad Landscape)
 [![enter image description here][3]][3]
- 
+
+## (iPhone Landscape)
+[![enter image description here][4]][4]
+
 Main ViewController is the entry point. Within the main VC, Container VC is used. UIPageViewController is dragged in underlying which three are VCs which would be the pages within the UIPageViewController. After removing the ContainerView's default controller, UIPageViewController is embedded (Enbed Segue) into the ContainerView (which in within the main VC).
 The whole arrangement looks like:
 
@@ -33,7 +36,8 @@ At the end of it, the result above is the following which is exactly what I want
 
   [1]: https://cdn-images-1.medium.com/max/800/1*ScnS7M2cat3wVwpZWR450g.png
   [2]: https://cdn-images-1.medium.com/max/800/1*YLByIhWCI5_NnjgeyU87tA.gif
-  [3]: https://cdn-images-1.medium.com/max/800/1*d8_cZqZssKjXX3ERht4UQQ.gif
+  [3]: https://cdn-images-1.medium.com/max/800/1*hdgol8ucOiOXZGgk-xiAdg.gif
+  [4]: https://cdn-images-1.medium.com/max/800/1*FE8nh7faBBlXNv2wV8B80Q.gif
   
   Icons made by Freepik from www.flaticon.com 
 
