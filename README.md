@@ -27,6 +27,5 @@ At the end of it, the result above is the following which is exactly what I want
   [4]: https://cdn-images-1.medium.com/max/800/1*FE8nh7faBBlXNv2wV8B80Q.gif
   
   Icons made by Freepik from www.flaticon.com 
-
-
+  I am reachable at https://twitter.com/abhinavpraksh for further assistance/ conversation. 
 
