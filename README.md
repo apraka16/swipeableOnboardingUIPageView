@@ -1,5 +1,5 @@
 # Swipeable Card Onboarding UIPageView iOS
-## Swipeable cards lookalike used for onboarding. 
+## Swipeable cards for onboarding. 
 Code wherein the onboarding screen will be used only once during the lifetime of application, is not introduced in the applicationDidLaunch method (within AppDelegate). It is expected that people using it might introduce that, as it is hardly 4 lines of code. Please note that main purpose was to keep the main View appearing behind the PageViews (or onboarding screens, so that users always have a glimpse of the good stuff lurking behind). 
  
 ## Result
